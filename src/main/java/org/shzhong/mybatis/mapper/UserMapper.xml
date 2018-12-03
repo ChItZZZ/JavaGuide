@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--suppress SqlResolve -->
 <mapper namespace="org.shzhong.mybatis.dao.UserMapper">
   <resultMap id="BaseResultMap" type="org.shzhong.mybatis.domain.User">
     <id column="id" jdbcType="INTEGER" property="id" />
