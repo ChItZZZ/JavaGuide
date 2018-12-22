@@ -11,6 +11,14 @@ https://blog.csdn.net/s10461/article/details/53941091
  如果只指定了<?>，而没有extends，则默认是允许Object及其下的任何Java类了。也就是任意类。
  通配符泛型不单可以向下限制，如<? extends Collection>，还可以向上限制，如<? super Double>，表示类型只能接受Double及其上层父类类型，如Number、Object类型的实例。
 
+上面有泛型的定义和赋值；当在赋值的时候，上面一节说赋值的都是为具体类型，当赋值的类型不确定的时候，我们用通配符(?)代替了：
+
+如
+List<?> unknownList;
+List<? extends Number> unknownNumberList;
+List<? super Integer> unknownBaseLineIntgerList;
+ 
+在Java集合框架中，对于参数值是未知类型的容器类，只能读取其中元素，不能向其中添加元素， 因为，其类型是未知，所以编译器无法识别添加元素的类型和容器的类型是否兼容，唯一的例外是NULL
 
 泛型牛逼的地方就是在这个地方。
 如果你不用泛型，而使用Object类型，那么每次执行完之后，我们即使得到这个结果，还得类型转换一下，那么这下就像文章上面描述的那样。分分钟出现castfailexception。也就是类型转换异常啦。
